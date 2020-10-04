@@ -14,14 +14,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #e5e5e5;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #444f6c;
 }
 
 .App-link {
@@ -35,4 +35,42 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+button {
+  border-radius: 50px;
+  padding: 10px;
+  cursor: pointer;
+  border-style: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+/* Button Mode */
+.button--light {
+  background-color: #ffffff;
+  color: #444f6c;
+}
+
+/* Button Mode */
+.button--dark {
+  background-color: #444f6c;
+  color: #9da7b9;
+}
+
+/* Button Size */
+.button--small {
+  width: 150px;
+}
+
+/* Button Size */
+.button--medium {
+  width: 200px;
+  font-weight: bold;
+}
+
+/* Button Size */
+.button--large {
+  width: 250px;
+  font-weight: bolder;
 }

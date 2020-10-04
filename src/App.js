@@ -1,23 +1,66 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+/**
+ *
+ * @param {*} param0
+ */
+
+const MyButton = ({
+  className = '',
+  mode = 'light',
+  size = 'medium',
+  ...otherProps
+}) => {
+  return (
+    <button
+      className={`${className} button--${mode} button--${size}`}
+      {...otherProps}
+    />
+  );
+};
+
 function App() {
+  const [mode, setMode] = useState('light');
+  const [size, setSize] = useState('medium');
+
+  const changeMode = (event) => {
+    setMode(event.target.id);
+  };
+
+  const changeSize = (event) => {
+    setSize(event.target.id);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <p>Reusable Component</p>
+        <MyButton size={size} mode={mode}>
           Learn React
-        </a>
+        </MyButton>
+        <hr />
+        <section>
+          <p>Mode</p>
+          <button id="light" onClick={changeMode}>
+            Light
+          </button>
+          <button id="dark" onClick={changeMode}>
+            Dark
+          </button>
+        </section>
+        <section>
+          <p>Size</p>
+          <button id="small" onClick={changeSize}>
+            Small
+          </button>
+          <button id="medium" onClick={changeSize}>
+            Medium
+          </button>
+          <button id="large" onClick={changeSize}>
+            Large
+          </button>
+        </section>
       </header>
     </div>
   );
