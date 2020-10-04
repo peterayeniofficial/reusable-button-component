@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
 
-/**
- *
- * @param {*} param0
- */
-
 const MyButton = ({
   className = '',
   mode = 'light',
